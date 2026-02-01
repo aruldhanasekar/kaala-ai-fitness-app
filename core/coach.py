@@ -16,14 +16,15 @@ def client_intro():
 
     name = input("Enter your name: ").title()
     age = int(input("Enter your age: "))
+    gender = input("Male(M) or Female(F): ")
     country = input("Enter your country: ")
 
     print("\n")
 
-    checkup_list(name)
+    checkup_list(name, age)
 
 
-def checkup_list(name):
+def checkup_list(name, age):
     print("==============================\n")
     print(f"What would you like to check now, {name}?")
 
@@ -33,19 +34,19 @@ def checkup_list(name):
     option = input("Select an option (a or b): ").lower()
 
     if option == "a":
-        bmi_checkup()
+        bmi_checkup(age)
     elif option == "b":
         print(f"\nCurrently, only BMI check is available, {name}.")
         y_n = input("Do you want to check your BMI? (y/n): ").lower()
 
         if y_n == "y":
-            bmi_checkup()
+            bmi_checkup(age)
         else:
             print(f"\nThank you for using Kaala, {name}.")
 
 
-def bmi_checkup():
-    bmi_calculator()
+def bmi_checkup(age):
+    bmi_calculator(age)
 
 
 if __name__ == "__main__":

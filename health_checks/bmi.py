@@ -1,4 +1,4 @@
-def bmi_calculator():
+def bmi_calculator(age: int):
     print("=====Calculate you BMI(BODY MASS INDEX)=====")
     print("")
     print("")
@@ -15,42 +15,42 @@ def bmi_calculator():
                print("\n")
                height =  get_height("a")
                print("\n")
-               bmi_results(weight, height)
+               bmi_results(weight, height, age)
                break
             elif unit == "b":
                 weight =  get_weight("b")
                 print("\n")
                 height =  get_height("b")
                 print("\n")
-                bmi_results(weight, height)
+                bmi_results(weight, height, age)
                 break
             elif unit == "c":
                 weight =  get_weight("c")
                 print("\n")
                 height =  get_height("c")
                 print("\n")
-                bmi_results(weight, height)
+                bmi_results(weight, height, age)
                 break
 
         except ValueError:
             continue
 
-def bmi_results(weight, height):
+def bmi_results(weight, height, age):
     
     results = weight / height
 
     if 0 < results < 18.5:
         print(f"Here is your BMI: {results:.1f}")
-        print("Underweight (Less weight)")
+        print(f"At this {age}, this is Underweight (Less weight)")
     elif 18.5 <= results < 24.9:
         print(f"Here is your BMI: {results:.1f}")
-        print("Normal (Correct weight)")
+        print(f"At this {age}, this is  Normal (Correct weight)")
     elif 25.0 <= results < 29.9:
         print(f"Here is your BMI: {results:.1f}")
-        print("Overweight")
+        print(f"At this {age}, this is Overweight")
     elif results > 30.0:
         print(f"Here is your BMI: {results:.1f}")
-        print("Obesity")
+        print(f"At this {age}, this is Obesity")
 
 
 def get_weight(n):
